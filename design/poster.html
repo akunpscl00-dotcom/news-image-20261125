@@ -1,0 +1,251 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<!-- Source of entry.png: rendered at 1024x1024 by design/render.sh (headless Chromium).
+     Every shape is inline SVG/CSS; text uses the system Liberation fonts. Story data lives in
+     the STORIES array below so the map pins, region counts, timeline and lists stay in sync. -->
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1024px; height: 1024px; overflow: hidden; background: #f3eee3; }
+  body { font-family: 'Liberation Sans', 'DejaVu Sans', sans-serif; color: #16181d; position: relative; }
+  .abs { position: absolute; }
+  header { left: 0; top: 0; width: 1024px; height: 112px; background: #101826; color: #fff; }
+  .kick { left: 22px; top: 12px; font-size: 14px; letter-spacing: 5px; color: #f2b632; font-weight: bold; }
+  .mast { left: 20px; top: 28px; font-family: 'Liberation Serif', serif; font-weight: bold; font-size: 58px; line-height: 60px; letter-spacing: -1px; }
+  .mast em { font-style: normal; color: #f2b632; }
+  .sub { left: 22px; top: 90px; font-size: 13px; color: #c4cede; }
+  .dbox { right: 20px; top: 12px; width: 118px; height: 88px; background: #f2b632; color: #101826; border-radius: 6px; text-align: center; }
+  .dbox .w { font-size: 14px; font-weight: bold; letter-spacing: 2px; margin-top: 6px; }
+  .dbox .n { font-family: 'Liberation Serif', serif; font-size: 50px; line-height: 48px; font-weight: bold; }
+  .dbox .m { font-size: 13px; font-weight: bold; letter-spacing: 1px; }
+  .chips { left: 14px; top: 118px; width: 996px; height: 24px; display: flex; gap: 6px; align-items: center; }
+  .chip { font-size: 12px; font-weight: bold; color: #fff; padding: 4px 9px; border-radius: 12px; white-space: nowrap; }
+  .chip.total { background: #101826; }
+  .tile { background: #fff; border-radius: 7px; box-shadow: 0 1px 2px rgba(0,0,0,.15); overflow: hidden; }
+  .tag { display: inline-block; font-size: 10px; font-weight: bold; letter-spacing: 1px; color: #fff; padding: 2px 6px; border-radius: 3px; }
+  .hd { font-family: 'Liberation Serif', serif; font-weight: bold; line-height: 1.08; }
+  .tx { font-size: 11.5px; line-height: 1.3; color: #2a2e36; }
+  .num { display: inline-block; min-width: 17px; height: 15px; line-height: 15px; border-radius: 8px; color: #fff; font-size: 10px; font-weight: bold; text-align: center; margin-right: 4px; }
+  .list { font-size: 10.6px; line-height: 1.25; }
+  .list div { margin-bottom: 3px; }
+  .list b { color: #101826; }
+  .colh { font-size: 11px; font-weight: bold; letter-spacing: 2px; border-bottom: 2px solid; padding-bottom: 2px; margin-bottom: 5px; }
+  .tl { left: 14px; top: 682px; width: 996px; height: 66px; }
+  .dc { left: 14px; top: 948px; width: 996px; height: 68px; background: #fff7e0; border: 2px dashed #b3261e; border-radius: 7px; padding: 6px 12px; }
+  .dc h4 { font-size: 12px; color: #b3261e; letter-spacing: 1px; }
+  .dc p { font-size: 10.4px; line-height: 1.28; color: #3a2a20; margin-top: 2px; }
+</style></head>
+<body>
+<header class="abs">
+  <div class="abs kick">THE WORLD IN ONE PAGE &middot; DAILY FRONT PAGE</div>
+  <div class="abs mast">Wednesday, <em>25 November</em> 2026</div>
+  <div class="abs sub" id="sub"></div>
+  <div class="abs dbox"><div class="w">WED</div><div class="n">25</div><div class="m">NOV 2026</div></div>
+</header>
+<div class="abs chips" id="chips"></div>
+
+<!-- TILE A: lead story, Shenzhou-24 -->
+<div class="abs tile" style="left:14px; top:148px; width:340px; height:270px;">
+  <svg width="340" height="128" viewBox="0 0 340 128" style="display:block">
+    <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1633"/><stop offset="1" stop-color="#3b4f86"/></linearGradient></defs>
+    <rect width="340" height="128" fill="url(#sky)"/>
+    <g fill="#fff" opacity=".85"><circle cx="30" cy="20" r="1.2"/><circle cx="80" cy="44" r="1"/><circle cx="270" cy="18" r="1.3"/><circle cx="310" cy="60" r="1"/><circle cx="210" cy="30" r="1"/><circle cx="140" cy="14" r="1.1"/></g>
+    <!-- Tiangong station -->
+    <g transform="translate(250,34)"><rect x="-16" y="-5" width="32" height="10" rx="3" fill="#d8dde8"/><rect x="-46" y="-3" width="26" height="6" fill="#3f7be0"/><rect x="20" y="-3" width="26" height="6" fill="#3f7be0"/><rect x="-4" y="5" width="8" height="12" fill="#c5ccd8"/></g>
+    <path d="M118 96 Q170 60 232 40" stroke="#f2b632" stroke-width="1.6" stroke-dasharray="4 4" fill="none"/>
+    <!-- rocket -->
+    <g transform="translate(100,104) rotate(52)"><rect x="-6" y="-38" width="12" height="40" rx="2" fill="#f4f4f4"/><path d="M-6 -38 L0 -52 L6 -38 Z" fill="#c8102e"/><rect x="-6" y="-20" width="12" height="4" fill="#c8102e"/><path d="M-6 2 L-12 10 L-6 6 Z M6 2 L12 10 L6 6 Z" fill="#9aa3b5"/><path d="M-4 3 Q0 26 4 3 Z" fill="#ff9a1f"/></g>
+    <rect x="0" y="112" width="340" height="16" fill="#1c2a1c"/><rect x="54" y="88" width="6" height="26" fill="#5a6070"/>
+    <text x="10" y="124" font-size="10" fill="#d0d8c8" font-family="Liberation Sans">JIUQUAN 00:18 UTC &#8594; DOCKED 03:56 &#8594; CREW ABOARD 06:35</text>
+  </svg>
+  <div style="padding:7px 11px">
+    <span class="tag" style="background:#c8102e">LEAD &middot; SPACE</span>
+    <div class="hd" style="font-size:22px; margin-top:4px">Pakistan's first astronaut flies to China's space station</div>
+    <div class="tx" style="margin-top:4px">Shenzhou-24 (Long March-2F) lifts off from Jiuquan with Muhammad Zeeshan Ali, the first foreign astronaut on Tiangong, alongside Tang Hongbo and Wu Yi. Ali is a payload specialist on a 5&ndash;10 day stay.</div>
+  </div>
+</div>
+
+<!-- TILE B: markets -->
+<div class="abs tile" style="left:362px; top:148px; width:322px; height:270px; padding:8px 11px;">
+  <span class="tag" style="background:#1f6f43">MARKETS</span>
+  <div class="hd" style="font-size:21px; margin-top:4px">Tariff shock: Asia crashes, US targets 14 economies</div>
+  <div class="tx" style="margin-top:3px">USTR proposes new excess-capacity duties: EU, Japan, Korea 15%, China +20% (40% if the truce fails). Kospi hit a circuit breaker; the Dow erased a 1,100-point drop.</div>
+  <svg width="300" height="146" viewBox="0 0 300 146" style="margin-top:2px" id="bars"></svg>
+</div>
+
+<!-- TILE C: Gulf / Yemen -->
+<div class="abs tile" style="left:692px; top:148px; width:318px; height:270px; padding:8px 11px;">
+  <span class="tag" style="background:#9c4a12">MIDDLE EAST</span>
+  <div class="hd" style="font-size:21px; margin-top:4px">Yemen war spreads: Aden encircled, Saudi oil hub targeted</div>
+  <svg width="296" height="40" viewBox="0 0 296 64" preserveAspectRatio="none" style="margin-top:4px">
+    <rect width="296" height="64" rx="4" fill="#f6ead8"/>
+    <path d="M10 20 Q60 8 120 14 L170 10 Q230 6 286 22 L286 64 L10 64 Z" fill="#e2c9a0"/>
+    <path d="M60 52 Q110 30 150 40" stroke="#c8102e" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+    <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#c8102e"/></marker></defs>
+    <circle cx="150" cy="42" r="5" fill="#c8102e"/><text x="158" y="46" font-size="10" font-weight="bold" fill="#5a2a10" font-family="Liberation Sans">ADEN</text>
+    <circle cx="232" cy="18" r="5" fill="#101826"/><text x="186" y="14" font-size="10" font-weight="bold" fill="#101826" font-family="Liberation Sans">RAS TANURA</text>
+    <circle cx="40" cy="30" r="5" fill="#9c4a12"/><text x="12" y="46" font-size="10" font-weight="bold" fill="#5a2a10" font-family="Liberation Sans">HODEIDAH</text>
+    <g fill="#5a6070"><path d="M240 34 l10 -3 l-3 6 z"/><path d="M256 40 l10 -3 l-3 6 z"/></g>
+  </svg>
+  <div class="list" style="margin-top:5px; font-size:10.4px" id="mideast"></div>
+</div>
+
+<!-- MAP -->
+<div class="abs tile" style="left:14px; top:426px; width:480px; height:250px;">
+  <div style="position:absolute; left:10px; top:6px; font-size:11px; font-weight:bold; letter-spacing:2px; color:#101826">WHERE IT HAPPENED &middot; NUMBERED STORIES</div>
+  <svg width="480" height="250" viewBox="0 0 480 250" id="map"></svg>
+</div>
+
+<!-- right lists -->
+<div class="abs" style="left:504px; top:426px; width:250px; height:252px;"><div id="colA" class="list"></div></div>
+<div class="abs" style="left:762px; top:426px; width:248px; height:252px;"><div id="colB" class="list"></div></div>
+
+<!-- timeline -->
+<div class="abs tl tile"><svg width="996" height="66" viewBox="0 0 996 66" id="tl"></svg></div>
+
+<!-- bottom columns -->
+<div class="abs" style="left:14px; top:756px; width:240px; height:182px;"><div id="colC" class="list" style="font-size:10.3px"></div></div>
+<div class="abs" style="left:262px; top:756px; width:246px; height:182px;"><div id="colD" class="list" style="font-size:10.3px"></div></div>
+<div class="abs" style="left:516px; top:756px; width:246px; height:182px;"><div id="colF" class="list" style="font-size:10.3px"></div></div>
+<div class="abs" style="left:770px; top:756px; width:240px; height:182px;"><div id="colE" class="list" style="font-size:10.3px"></div></div>
+
+<div class="abs dc">
+  <h4>DATE CHECK &middot; LEFT OFF THIS PAGE BECAUSE THEY HAPPENED BEFORE WED 25 NOV</h4>
+  <p>Huawei convicted in Brooklyn (verdict Tue 24) &middot; Champions League matchday 5, Real Madrid 5&ndash;1 PSV, Man City 2&ndash;2 Napoli (Tue 24) &middot; Houthi drone hits Riyadh PIF tower, 11 hurt (Tue 24) &middot; Hamas security chief Naim Abu Nahal killed (Tue 24) &middot; Turkish army helicopter crash at Eskişehir, 5 dead (Tue 24) &middot; Trump's turkey pardon (Tue 24) &middot; COP31 Antalya talks collapse (Sun 22). The West Java mine flooded Mon 23; the recoveries below are Wednesday's.</p>
+</div>
+
+<script>
+const R = { // region colours
+  ASIA: ['Asia-Pacific', '#c8102e'], MIDEAST: ['Middle East', '#9c4a12'], EUROPE: ['Europe', '#2456a6'],
+  AMERICAS: ['Americas', '#6a3d9a'], AFRICA: ['Africa', '#1f8a5b'], SCI: ['Science & Biz', '#4a5566'] };
+// [num, region, lon, lat, utc or '', bold headline, detail, column]
+const STORIES = [
+  [1,'ASIA',100,41,'00:18','Shenzhou-24 carries Pakistan\'s first astronaut','to Tiangong','lead'],
+  [2,'ASIA',127,37.5,'','Kospi −6.16%','circuit breaker; Taiex −4.8%, Nikkei −2.8%','mkt'],
+  [3,'MIDEAST',45,12.8,'00:00','Houthis mass around Aden;','residents ready to flee','me'],
+  [4,'MIDEAST',43,14.8,'02:21','Coalition strikes Hodeidah port,','Saada, Amran','me'],
+  [5,'MIDEAST',50,26.6,'','Houthis claim Ras Tanura hit;','4 drones downed','me'],
+  [6,'MIDEAST',34.4,31.5,'','Gaza City strike kills Hamas Col. Abuelouf,','wife, 2 daughters','me'],
+  [7,'MIDEAST',56.3,26.5,'','IRGC claims 2 tankers hit mines in Hormuz','(unverified)','me'],
+  [8,'EUROPE',30.5,50.4,'01:19','Zelensky: Ukraine needs €115bn for 2027;','~€90bn from EU secured','B'],
+  [9,'EUROPE',-0.1,51.5,'04:48','UK MoD & MI5 warn arms suppliers','of Russian sabotage','B'],
+  [10,'ASIA',125.7,39,'04:50','North Korea expels Swiss envoy,','closes Pyongyang office, 48 hours','A'],
+  [11,'ASIA',121.5,31.2,'01:31','China investigates Shanghai party chief','Chen Jining','A'],
+  [12,'AMERICAS',-89,29.8,'02:17','Cessna 210 crashes off Mississippi:','6 dead, incl. boys 8 and 10','C'],
+  [13,'ASIA',90.4,23.8,'06:01','Bangladesh garment wage +36%','to 17,000 taka','A'],
+  [14,'AMERICAS',-75.5,10.4,'07:02','Colombia: all hostages freed in Cartagena','supermarket raid, 1 captor killed','C'],
+  [15,'ASIA',106.6,-6.6,'08:08','West Java gold-mine flood: 3 bodies found,','23 still trapped 100 m down','A'],
+  [16,'ASIA',149.1,-35.3,'','Australia–Solomon Islands treaty signed;','Canberra = "security partner of choice"','A'],
+  [17,'EUROPE',6.1,49.6,'','Euro-area inflation hits 4.0%','(Eurostat)','F'],
+  [18,'ASIA',145,-37.8,'','Australia CPI 4.9% in Oct;','pressure on RBA','A'],
+  [19,'EUROPE',-0.4,51.9,'','easyJet profit −89%:','£244m fuel hit','F'],
+  [20,'SCI',-122.3,47.6,'','Amazon buys AI firm Decart','for its chip push','F'],
+  [21,'SCI',-122.4,37.8,'','Anthropic shares fall below','IPO price for first time','F'],
+  [22,'SCI',10.7,59.9,'','Tidal bans fully AI-made music,','deletes 27m tracks','E'],
+  [23,'SCI',6.1,46.2,'','UNAIDS: funding cuts threaten','decades of HIV progress','E'],
+  [24,'AFRICA',-17.4,14.7,'','CAS restores Senegal\'s 2025 AFCON title;','Morocco vows legal fight','D'],
+  [25,'SCI',8.6,47.5,'','Roche breast-cancer pill wins','2nd FDA approval','E'],
+  [26,'SCI',null,null,'','Study: Homo erectus lived in rainforest','beside Denisovans','E'],
+  [27,'SCI',null,null,'','Study: dolphins in steady big groups','live longer','E'],
+  [28,'AMERICAS',-77,38.9,'','Kilmar Abrego Garcia leaves US for Spain','after 20-month fight','C'],
+  [29,'EUROPE',13.4,52.5,'','Merz tells Bundestag Russia is escalating,','defends Ukraine aid','B'],
+  [30,'EUROPE',23.7,38,'','Greek public sector walks out','in nationwide strike','B'],
+  [31,'EUROPE',-18,27.7,'','Record 2,100+ migrants reach Canaries in 24h,','mostly El Hierro','B'],
+  [32,'EUROPE',4.4,50.8,'','EU proposes €50bn tech & quantum fund','+ Quantum Act','F'],
+  [33,'EUROPE',37.6,55.8,'','Kremlin rejects Boris Johnson\'s','Western-force idea','B'],
+  [34,'EUROPE',2.35,48.9,'','Sarkozy and Carla Bruni','ordered to stand trial','B'],
+  [35,'AFRICA',28.2,-25.7,'','Ramaphosa wins bid to set aside','Phala Phala report','D'],
+  [36,'AFRICA',3.4,6.5,'06:14','Nollywood star Pete Edochie','dies at 79','D'],
+  [37,'AFRICA',28.3,-15.4,'','Zambia: opposition leader Mundubile + 12','indicted for treason','D'],
+  [38,'AFRICA',12.2,-5.6,'','Angola starts €142m solar plant','','D'],
+  [39,'AFRICA',36.8,-1.3,'','Steinmeier visits Kenya\'s Ruto','','D'],
+  [40,'EUROPE',5.3,60.4,'','Norse Atlantic shares −74%','on cash warning','F'],
+  [41,'AMERICAS',-74,40.7,'','Dow erases 1,100-pt drop,','ends +0.33%','C'],
+  [45,'AMERICAS',-77,38.9,'13:30','US Q3 GDP revised up to 4.3%;','PCE inflation 3.8%, core 3.3%','C'],
+  [46,'AMERICAS',-77,38.9,'','USTR proposes 15–35% tariffs','on 14 economies','F'],
+  [42,'ASIA',130.4,33.6,'','Man stabbed to death near','Fukuoka mall','A'],
+  [43,'AFRICA',3.05,36.75,'','Algeria opens mobile polls','before 28 Nov vote','D'],
+  [44,'EUROPE',null,null,'','UK pledges public control of','vital utilities','E'],
+];
+const col = r => R[r][1];
+const line = s => `<div><span class="num" style="background:${col(s[1])}">${s[0]}</span>${s[4] ? '<span style="color:#7a808c;font-size:10px">'+s[4]+' </span>' : ''}<b>${s[5]}</b> ${s[6]}</div>`;
+document.getElementById('sub').textContent = `${STORIES.length} stories, every one dated Wednesday 25 Nov 2026 · times in UTC · numbers match the map`;
+// chips
+const counts = {}; STORIES.forEach(s => counts[s[1]] = (counts[s[1]] || 0) + 1);
+let ch = `<span class="chip total">${STORIES.length} STORIES</span>`;
+for (const k of Object.keys(R)) ch += `<span class="chip" style="background:${col(k)}">${R[k][0]} ${counts[k] || 0}</span>`;
+ch += `<span class="chip" style="background:#b3261e">7 OLDER STORIES EXCLUDED</span>`;
+document.getElementById('chips').innerHTML = ch;
+// lists
+const fill = (id, title, colour, keys) => {
+  let h = title ? `<div class="colh" style="color:${colour};border-color:${colour}">${title}</div>` : '';
+  STORIES.filter(s => keys.includes(s[7])).forEach(s => h += line(s));
+  document.getElementById(id).innerHTML = h;
+};
+fill('mideast', '', '', ['me']);
+fill('colA', 'ASIA-PACIFIC', '#c8102e', ['A']);
+fill('colB', 'EUROPE & UKRAINE', '#2456a6', ['B']);
+fill('colF', 'ECONOMY & BUSINESS', '#8a6d1a', ['F']);
+fill('colC', 'AMERICAS', '#6a3d9a', ['C']);
+fill('colD', 'AFRICA', '#1f8a5b', ['D']);
+fill('colE', 'SCIENCE, TECH & MORE', '#4a5566', ['E']);
+// market bars
+const mk = [['Kospi',-6.16],['Taiex',-4.80],['Nikkei',-2.78],['Shanghai',-2.03],['Hang Seng',-1.14],['Nifty',1.85]];
+let b = '<line x1="80" y1="0" x2="80" y2="150" stroke="#888" stroke-width="1"/>';
+const sc = 30; // px per %
+mk.forEach((m, i) => {
+  const y = 4 + i * 23, w = Math.abs(m[1]) * sc * 0.62, neg = m[1] < 0;
+  b += `<text x="74" y="${y+13}" font-size="11.5" text-anchor="end" font-family="Liberation Sans" font-weight="bold" fill="#222">${m[0]}</text>`;
+  b += `<rect x="${neg ? 80 : 80}" y="${y}" width="${w}" height="17" fill="${neg ? '#c8102e' : '#1f8a5b'}" rx="2"/>`;
+  b += `<text x="${80 + w + 5}" y="${y+13}" font-size="11.5" font-family="Liberation Sans" font-weight="bold" fill="${neg ? '#c8102e' : '#1f8a5b'}">${m[1] > 0 ? '+' : '−'}${Math.abs(m[1]).toFixed(2)}%</text>`;
+});
+document.getElementById('bars').innerHTML = b;
+// map
+const W = 480, H = 250, L0 = -130, L1 = 160, T0 = 72, T1 = -50, mTop = 20;
+const px = lon => (lon - L0) / (L1 - L0) * W, py = lat => mTop + (T0 - lat) / (T0 - T1) * (H - mTop - 4);
+const land = [
+ [[-168,66],[-140,70],[-95,72],[-75,68],[-60,55],[-53,47],[-66,44],[-75,35],[-81,25],[-97,26],[-97,18],[-87,15],[-79,8],[-83,9],[-92,15],[-105,20],[-112,30],[-118,34],[-124,40],[-125,48],[-135,58],[-150,60],[-165,60]],
+ [[-50,82],[-25,82],[-20,70],[-42,60],[-55,65],[-60,76]],
+ [[-79,8],[-60,10],[-50,0],[-35,-6],[-40,-22],[-48,-28],[-58,-38],[-65,-42],[-68,-55],[-75,-48],[-72,-30],[-71,-18],[-81,-5],[-78,2]],
+ [[-10,36],[-9,43],[-2,44],[-5,48],[2,51],[8,54],[10,58],[5,62],[15,69],[28,71],[40,68],[45,60],[40,45],[28,41],[22,37],[15,38],[12,44],[5,43],[-1,37]],
+ [[-17,15],[-17,21],[-10,30],[-6,36],[10,37],[20,32],[32,31],[34,28],[43,12],[51,12],[40,-2],[40,-15],[33,-25],[27,-34],[18,-34],[12,-17],[13,-5],[9,4],[-8,4],[-15,10]],
+ [[28,41],[36,36],[35,32],[43,13],[56,22],[60,25],[67,25],[72,20],[77,8],[80,15],[88,22],[92,22],[98,16],[100,8],[104,1],[106,10],[109,15],[108,21],[120,23],[122,31],[120,38],[126,38],[129,35],[130,42],[140,48],[142,54],[135,55],[160,60],[170,65],[180,68],[160,70],[140,72],[110,76],[80,73],[68,70],[60,68],[45,68],[40,45]],
+ [[114,-22],[122,-18],[130,-12],[137,-12],[142,-11],[146,-19],[153,-26],[150,-37],[141,-38],[131,-31],[115,-34]],
+ [[130,31],[135,34],[140,36],[142,40],[141,45],[139,38]],
+ [[-5,50],[1,51],[0,53],[-3,56],[-5,58],[-6,55]],
+ [[95,5],[106,-6],[115,-8],[118,-9],[110,-8],[104,-5]],
+ [[109,2],[117,7],[119,1],[116,-4],[110,-3]],
+ [[44,-16],[50,-15],[48,-25],[44,-24]],
+];
+let m = `<rect width="${W}" height="${H}" fill="#dde9f2"/>`;
+land.forEach(p => m += `<path d="M${p.map(q => px(q[0]).toFixed(1)+' '+py(q[1]).toFixed(1)).join(' L')} Z" fill="#efe6cf" stroke="#c9b98f" stroke-width=".8"/>`);
+const placed = [];
+STORIES.filter(s => s[2] !== null).forEach(s => {
+  let x = px(s[2]), y = py(s[3]);
+  for (const p of placed) { if (Math.hypot(p[0]-x, p[1]-y) < 13) { x += 12; } }
+  for (const p of placed) { if (Math.hypot(p[0]-x, p[1]-y) < 13) { y += 12; } }
+  placed.push([x, y]);
+  m += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="7" fill="${col(s[1])}" stroke="#fff" stroke-width="1.2"/>`;
+  m += `<text x="${x.toFixed(1)}" y="${(y+3.4).toFixed(1)}" font-size="${s[0] > 9 ? 8 : 9}" text-anchor="middle" font-weight="bold" fill="#fff" font-family="Liberation Sans">${s[0]}</text>`;
+});
+document.getElementById('map').innerHTML = m;
+// timeline (UTC)
+const x0 = 96, x1 = 980, ax = 33;
+let t = `<text x="8" y="25" font-size="10.5" font-weight="bold" fill="#101826" font-family="Liberation Sans">WED BY</text><text x="8" y="38" font-size="10.5" font-weight="bold" fill="#101826" font-family="Liberation Sans">THE CLOCK</text><text x="8" y="50" font-size="9" fill="#555" font-family="Liberation Sans">UTC</text>`;
+t += `<line x1="${x0}" y1="${ax}" x2="${x1}" y2="${ax}" stroke="#101826" stroke-width="2"/>`;
+for (let h = 0; h <= 24; h += 3) { const x = x0 + (x1 - x0) * h / 24; t += `<line x1="${x}" y1="${ax-3}" x2="${x}" y2="${ax+3}" stroke="#101826"/><text x="${x}" y="63" font-size="8.5" text-anchor="middle" fill="#666" font-family="Liberation Sans">${String(h).padStart(2,'0')}:00</text>`; }
+const ev = STORIES.filter(s => s[4]).concat([[0,'ASIA',0,0,'03:56','','',''],[0,'ASIA',0,0,'06:35','','','']]);
+const lbl = { '00:00':'Aden', '00:18':'Launch', '01:19':'Zelensky', '01:31':'Chen probe', '02:17':'Cessna', '02:21':'Hodeidah', '03:56':'Docked', '04:48':'MI5', '04:50':'N. Korea', '06:01':'Dhaka', '06:14':'Edochie', '06:35':'Crew in', '07:02':'Cartagena', '08:08':'Mine' };
+const lastX = [-99, -99, -99, -99], ys = [24, 13, 49, 49];
+ev.sort((a, b) => a[4].localeCompare(b[4])).forEach(s => {
+  const [hh, mm] = s[4].split(':').map(Number), x = x0 + (x1 - x0) * (hh + mm / 60) / 24;
+  const name = lbl[s[4]] || '', w = name.length * 5.6 + 6;
+  let r = [0, 2, 1].find(k => x - w / 2 > lastX[k]); if (r === undefined) r = 0;
+  lastX[r] = x + w / 2;
+  t += `<circle cx="${x.toFixed(1)}" cy="${ax}" r="4" fill="${col(s[1])}"/><line x1="${x.toFixed(1)}" y1="${ax}" x2="${x.toFixed(1)}" y2="${r >= 2 ? ys[r]-9 : ys[r]+2}" stroke="${col(s[1])}"/>`;
+  t += `<text x="${x.toFixed(1)}" y="${ys[r]}" font-size="9.5" font-weight="bold" text-anchor="middle" fill="${col(s[1])}" font-family="Liberation Sans">${name}</text>`;
+});
+const xp = x0 + (x1 - x0) * 13.5 / 24;
+t += `<circle cx="${xp}" cy="${ax}" r="4" fill="none" stroke="#555" stroke-width="1.5"/><text x="${xp + 8}" y="22" font-size="9.5" fill="#555" font-family="Liberation Sans">13:30 GDP 4.3%, PCE 3.8% · 14:30 Wall St opens down 3%, ends near flat</text>`;
+document.getElementById('tl').innerHTML = t;
+</script>
+</body></html>
